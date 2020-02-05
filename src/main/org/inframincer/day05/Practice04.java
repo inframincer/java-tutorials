@@ -8,18 +8,36 @@ public class Practice04 {
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
 
-        drawRectangle(input);
-        drawReverseRectangle(input);
+        drawTriangle1(input);
+        drawTriangle2(input);
+        drawReverseTriangle1(input);
+        drawReverseTriangle2(input);
     }
 
     /**
-     *
      * *
      * **
      * ***
      */
-    public static void drawRectangle(int length) {
+    public static void drawTriangle1(int length) {
         for (int i = 0; i < length; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *   *
+     *  **
+     * ***
+     */
+    public static void drawTriangle2(int length) {
+        for (int i = 0; i < length; i++) {
+            for (int j = 1; j < length - i; j++) {
+                System.out.print(" ");
+            }
             for (int j = 0; j <= i; j++) {
                 System.out.print("*");
             }
@@ -32,8 +50,25 @@ public class Practice04 {
      * **
      * *
      */
-    public static void drawReverseRectangle(int length) {
+    public static void drawReverseTriangle1(int length) {
         for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length - i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * ***
+     *  **
+     *   *
+     */
+    public static void drawReverseTriangle2(int length) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
             for (int j = 0; j < length - i; j++) {
                 System.out.print("*");
             }
